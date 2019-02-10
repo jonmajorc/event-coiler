@@ -1,0 +1,24 @@
+{
+  "projectName": "event-coiler",
+  "projectOwner": "jonmajorc",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "contributors": [
+    {
+      "login": "jonmajorc",
+      "name": "Jon Major",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/7799266?v=4",
+      "profile": "https://jonmajorc.me",
+      "contributions": [
+        "code",
+        "example",
+        "doc"
+      ]
+    }
+  ]
+}
