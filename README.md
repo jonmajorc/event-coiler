@@ -8,6 +8,7 @@
 </div>
 
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
+[![Build Status](https://travis-ci.org/jonmajorc/event-coiler.svg?branch=master)](https://travis-ci.org/jonmajorc/event-coiler)
 
 ## The Problem
 You need definition around each event that happens throughout an application, and you need them to be easily reusable. Because you want to log events with meaningful messages, and most importantly you want structured messages so searches are easier.
