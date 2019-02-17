@@ -3,5 +3,3 @@ node_modules
 dist
 yarn-error.log
 coverage
-# TODO (JMC) commit .vscode and remove from .gitignore
-.vscode

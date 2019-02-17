@@ -1,0 +1,37 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint-microsoft-contrib",
+    "tslint-eslint-rules",
+    "tslint-config-prettier"
+  ],
+  "jsRules": {},
+  "rules": {
+    "no-console": [true, "log", "warn"],
+    "no-relative-imports": false,
+    "completed-docs": [false, {
+      "classes": {"visibilities": ["exported"]},
+      "enums": {"visibilities": ["exported"]},
+      "functions": {"visibilities": ["exported"]},
+      "interfaces": {"visibilities": ["exported"]},
+      "methods": {"privacies": ["protected", "public"]},
+      "namespaces": {"visibilities": ["exported"]},
+      "properties": {"privacies": ["protected", "public"]},
+      "types": {"visibilities": ["exported"]},
+      "variables": {"visibilities": ["exported"]},
+      "tags": {"content": {"see": ".*"}, "exists": ["inheritDoc"]}
+    }],
+    "member-access": false,
+    "variable-name": false,
+    "function-name": false,
+    "strict-boolean-expressions": false,
+    "no-unused-expression": false,
+    "ordered-imports": false,
+    "curly": false,
+    "no-object-literal-type-assertion": false,
+    "prefer-type-cast": false,
+    "type-literal-delimiter": false,
+    "no-implicit-dependencies": false
+  },
+  "rulesDirectory": []
+}

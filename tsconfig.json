@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    // "resolveJsonModule": true,
+    "target": "es5",
+    "plugins": [
+      { "name": "typescript-tslint-plugin" }
+    ]
+  }
+}
