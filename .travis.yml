@@ -1,16 +1,26 @@
 sudo: false
 language: node_js
+
 cache:
   directories:
     - ~/.npm
     - ~/.cache
 notifications:
   email: false
+  
 node_js: '10'
+
 install: npm install
+
 script:
   - yarn test
-after_success:
-  - yarn semantic-release
+
 branches:
  only: master
+
+ jobs:
+  include:
+    - stage: release
+      node_js: '10'
+      script:
+        - yarn semantic-release
