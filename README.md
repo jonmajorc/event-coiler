@@ -13,17 +13,53 @@
 
 
 ## The Problem
-You need definition around each event that happens throughout an application, and you need them to be easily reusable. Because you want to log events with meaningful messages, and most importantly you want structured messages so searches are easier.
+You need to provide structure, definition, and reuse around events that happen throughout an application. You need the ability to configure with any package or internal solution also.
 
 ## The Solution
-Event Coiler enables structure and meaning around events that need logged. This is the solution that helped me create structure and meaning around Google Analytic Event's for the buisness to read, and most importantly, make sense of...
+Use Event Coiler to enable structure, defintion, and reuse around your events. This is the solution that helped me create structure, defintion, and reuse around Google Analytic Event's. With providing proper definition, the business is able to make sense of each event that's logged.
 
 ## Usage
-TODO
+
+Basic usage to how you can get started coiling your events!
+```js
+import coiler from 'event-coiler'
+
+// Event interaction config. You probably want this in it's own file `interactions.config.js`
+const config = `
+  {
+    "Dropdown": {
+      "clicked": {
+        "opened": "opened dropdown",
+        "closed": "closed dropdown",
+        "updated": "{{item}} was updated to {{uppercase(updated)}}",
+      }
+    }
+  }
+`
+
+const gaCoilerSetup = new Coiler({
+  emitter: (args) => {
+    console.log(args.value) // todo list was updated to CLEAN ROOM
+    console.log(args.emitter) // { ns: 'Dropdown.clicked' params: { item: 'todo list', updated: 'clean room' }
+  },
+  config,
+  interpolation: {
+    uppercase(value) {
+      return value.toUpperCase()
+    }
+  },
+  debug: true,
+})
+
+gaCoilerSetup.e('Dropdown.clicked', { item: 'todo list' updated: 'clean room' }) // todo list was updated to CLEAN ROOM
+```
+
 ## Inspiration
-TODO
+After my first implementation, I found out this was very similar to [i18next](https://github.com/i18next/i18next). Then I used it to help pave the path for Even Coiler.
+
 ## Other Solutions
-TODO
+- [i18next](https://github.com/i18next/i18next) -- potential solution, but it's rather focused on translation.
+
 ## Contributors
 
 Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
