@@ -8,7 +8,7 @@ cache:
 notifications:
   email: false
   
-node_js: '10'
+node_js: 10
 
 install: npm install
 
@@ -21,6 +21,9 @@ branches:
  jobs:
   include:
     - stage: release
-      node_js: '10'
-      script:
-        - yarn semantic-release
+      node_js: 10
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+          - yarn semantic-release
