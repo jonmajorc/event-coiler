@@ -12,14 +12,13 @@ node_js: 10
 
 install: npm install
 
-script:
-  - yarn test
-
 branches:
  only: master
 
  jobs:
   include:
+    - stage: test
+      script: yarn test
     - stage: release
       node_js: 10
       deploy:
